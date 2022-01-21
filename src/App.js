@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import Fetching from './components/Fetching'
 import './App.css';
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Loading from './Loading';
+import Nav from './Nav';
+import StarshipCard from './StarshipCard';
+import Home from './Home'
 
+
+  
 function App() {
-  return (
+  return( 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      <Fetching/>
+      
+      </div>
+       )
+      }
+      
+  <BrowserRouter>
+    <Nav/>
+    <Routes> 
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif|Cutive|Ultra' rel='stylesheet'></link> 
+        <Route path='/' element={<Fetching/>}/> 
+        <Route path='Home' element={<Home />}/>
+        <Route path="StarshipCard"element= {<StarshipCard/>}/>
 
-export default App;
+         </Routes>
+   
+     </BrowserRouter> 
+     export default App;
